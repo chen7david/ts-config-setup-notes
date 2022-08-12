@@ -1,0 +1,39 @@
+{
+  "name": "ts-config-setup-notes",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "app": "nodemon --watch './**/*.ts' --exec 'ts-node' ./src/app.ts",
+    "dev": "NODE_ENV=development npm run app",
+    "prod": "NODE_ENV=production npm run app",
+    "build": "tsc --build --clean && NODE_ENV=production tsc",
+    "start": "NODE_ENV=production node dist/app.js",
+    "knex": "./node_modules/.bin/knex --knexfile src/database/knexfile.ts",
+    "knex:dev": "NODE_ENV=development npm run knex",
+    "knex:prod": "NODE_ENV=production npm run knex"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chen7david/ts-config-setup-notes.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/chen7david/ts-config-setup-notes/issues"
+  },
+  "homepage": "https://github.com/chen7david/ts-config-setup-notes#readme",
+  "devDependencies": {
+    "@types/node": "^18.7.1",
+    "nodemon": "^2.0.19",
+    "sqlite3": "^5.0.11",
+    "ts-node": "^10.9.1",
+    "typescript": "^4.7.4"
+  },
+  "dependencies": {
+    "dotenv": "^16.0.1",
+    "knex": "^2.2.0"
+  }
+}
